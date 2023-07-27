@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { PROTECTED } from "Route/routes";
-import { useToggleLike, useDeletePosts } from "../AddPosts";
+import { useToggleLike, useDeletePost } from "../AddPosts";
 import { useComments } from "../comments/CommentHook";
 export default function Actions({ post }) {
   const { id, likes, uid } = post;
@@ -24,7 +24,7 @@ export default function Actions({ post }) {
   };
 
   const { toggleLike, isLoading: likeLoading } = useToggleLike(config);
-  const { deletePost, isLoading: deleteLoading } = useDeletePosts(id);
+  const { deletePost, isLoading: deleteLoading } = useDeletePost(id);
   const { comments, isLoading: commentsLoading } = useComments(id);
 
   return (

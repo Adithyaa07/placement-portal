@@ -13,7 +13,7 @@ import MyProfile from "components/users/student/MyProfile";
 import Interviews from "components/drives/Interviews";
 import AddDrives from "components/drives/AddDrives";
 import AddEvents from "components/events/AddEvents";
-import AllUsers from "components/users/AllUsers";
+import Users from "components/users/consumers/Index";
 import Comments from "components/users/feed/comments/Index";
 
 export const HOME = "/";
@@ -54,8 +54,8 @@ const router = createBrowserRouter([
       { path: "/protected/interviews", element: <Interviews /> },
       { path: "/protected/addDrive", element: <AddDrives /> },
       { path: "/protected/addEvent", element: <AddEvents /> },
-      { path: "/protected/users", element: <AllUsers /> },
       { path: "/protected/comments/:id", element: <Comments /> },
+      { path: "/protected/users", element: <Users /> },
     ],
   },
 ]);
