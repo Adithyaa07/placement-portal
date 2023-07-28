@@ -8,10 +8,13 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import { PROTECTED } from "Route/routes";
 import { useToggleLike, useDeletePost } from "../AddPosts";
 import { useComments } from "../comments/CommentHook";
+
+
+
+
 export default function Actions({ post }) {
   const { id, likes, uid } = post;
   const { user, isLoading: userLoading } = useAuth();

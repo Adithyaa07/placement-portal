@@ -17,6 +17,8 @@ function useUser(id) {
 }
 
 export default useUser;
+
+
 export function useUsers() {
   const [users, isLoading] = useCollectionData(collection(db, "users"));
   return { users, isLoading };
