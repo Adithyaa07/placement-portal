@@ -15,6 +15,7 @@ import AddDrives from "components/drives/AddDrives";
 import AddEvents from "components/events/AddEvents";
 import Users from "components/users/consumers/Index";
 import Comments from "components/users/feed/comments/Index";
+import Basic from "components/users/student/BasicDetails";
 
 export const HOME = "/";
 export const ADMINLOG = "/adminlog";
@@ -50,12 +51,16 @@ const router = createBrowserRouter([
         path: "/protected/drives",
         element: <Drives />,
       },
-      { path: "/protected/profile/:id", element: <MyProfile /> },
+      {
+        path: "/protected/profile/:id",
+        element: <MyProfile />,
+      },
       { path: "/protected/interviews", element: <Interviews /> },
       { path: "/protected/addDrive", element: <AddDrives /> },
       { path: "/protected/addEvent", element: <AddEvents /> },
       { path: "/protected/comments/:id", element: <Comments /> },
       { path: "/protected/users", element: <Users /> },
+      { path: "/protected/details/:id", element: <Basic /> },
     ],
   },
 ]);

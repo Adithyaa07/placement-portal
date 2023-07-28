@@ -5,7 +5,16 @@ import { db } from "firebase-auth";
 import { Divider, Input, useToast } from "@chakra-ui/react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useForm } from "react-hook-form";
-import { Box, HStack, Text, Heading, Button } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Text,
+  Heading,
+  Button,
+  InputGroup,
+  InputLeftAddon,
+  InputRightAddon,
+} from "@chakra-ui/react";
 
 function useAddDrive() {
   const [isLoading, setLoading] = useState(false);
@@ -116,12 +125,22 @@ function AddDrives() {
             placeholder="remote onsite or both"
             {...register("location", { required: true })}
           />
+
           <Text sx={textStyle}>Registration Link</Text>
-          <Input
+          <InputGroup size="sm">
+            <InputLeftAddon children="https://" />
+            <Input
+              sx={input}
+              placeholder="link"
+              {...register("register", { required: true })}
+            />
+            <InputRightAddon children=".com" />
+          </InputGroup>
+          {/* <Input
             sx={input}
             placeholder="link"
             {...register("register", { required: true })}
-          />
+          /> */}
           <Text sx={textStyle}>Description</Text>
           <Input
             sx={input}

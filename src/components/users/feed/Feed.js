@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, Button, Textarea } from "@chakra-ui/react";
+import { Box, HStack, Heading, Button, Textarea, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useAddPost } from "./AddPosts";
 import { useForm } from "react-hook-form";
@@ -39,7 +39,7 @@ function NewPost() {
             colorScheme="white"
             type="submit"
             isLoading={authLoading || addingPost}
-            loadingText="loading"
+            loadingText= "Loading..."
           >
             Post
           </Button>
@@ -60,7 +60,10 @@ function NewPost() {
 export default function Feed() {
   const { posts, isLoading } = usePosts();
 
-  if (isLoading) return "Loading posts...";
+  if (isLoading) return <Box padding='6' boxShadow='lg' bg='white'>
+  <SkeletonCircle size='10' />
+  <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
+</Box>;
 
   return (
     <>
