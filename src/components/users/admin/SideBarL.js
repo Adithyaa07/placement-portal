@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import HOME from "Route/routes";
 import {
   Flex,
   VStack,
@@ -22,9 +24,23 @@ function SideBarL() {
         p="4"
         alignContent="initial"
         position="fixed"
+        top="0"
+        left="0"
       >
         <Box>
-          <VStack spacing="4" align="initial" mt="-60">
+          <VStack spacing="4" align="initial">
+            <Flex mb="8" mt={-200}>
+              <Link
+                color="teal"
+                as={RouterLink}
+                to={HOME}
+                fontWeight="bold"
+                fontSize={25}
+              >
+                Placement Cell
+              </Link>
+            </Flex>
+
             <NavLink to="/" color="white">
               <Flex>
                 <Icon as={FaUniversity} boxSize="6" mr="3" />

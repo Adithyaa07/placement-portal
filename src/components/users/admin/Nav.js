@@ -1,9 +1,6 @@
-import { HOME } from "Route/routes";
-
 import { useLogout } from "hooks/auth";
-import { Link as RouterLink, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
-  Link,
   Icon,
   Flex,
   Spacer,
@@ -23,16 +20,6 @@ function Nav() {
     <div>
       <Flex as="Nav" bg="gray.800" height="60px">
         <Flex px="4" w="full" align="center" maxW="1600px">
-          <Link
-            color="teal"
-            as={RouterLink}
-            to={HOME}
-            fontWeight="bold"
-            fontSize={25}
-          >
-            Placement Cell
-          </Link>
-
           <Spacer />
           <Text color="teal" fontWeight="bold" fontSize={35} mt="20px">
             <Center>Admin's Dashboard</Center>
@@ -67,40 +54,3 @@ function Nav() {
 }
 
 export default Nav;
-// import { Button, Flex, Link } from "@chakra-ui/react";
-// import { HOME } from "Route/routes";
-// import { Link as RouterLink } from "react-router-dom";
-// import { useLogout } from "hooks/auth";
-
-// export default function Nav() {
-//   const { logout, isLoading } = useLogout();
-
-//   return (
-//     <Flex
-//       shadow="sm"
-//       pos="fixed"
-//       width="full"
-//       borderTop="6px solid"
-//       borderTopColor="teal.400"
-//       height="16"
-//       zIndex="3"
-//       justify="center"
-//       bg="white"
-//     >
-//       <Flex px="4" w="full" align="center" maxW="1200px">
-//         <Link color="teal" as={RouterLink} to={HOME} fontWeight="bold">
-//           Home
-//         </Link>
-//         <Button
-//           ml="auto"
-//           colorScheme="teal"
-//           size="sm"
-//           onClick={logout}
-//           isLoading={isLoading}
-//         >
-//           Logout
-//         </Button>
-//       </Flex>
-//     </Flex>
-//   );
-// }
