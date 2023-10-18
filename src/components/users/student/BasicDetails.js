@@ -11,19 +11,7 @@ import {
 import { db } from "firebase-auth";
 import { uuidv4 } from "@firebase/util";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-
-import {
-  useToast,
-  Box,
-  HStack,
-  Heading,
-  Button,
-  VStack,
-  Text,
-  Input,
-  SkeletonCircle,
-  SkeletonText,
-} from "@chakra-ui/react";
+import { useToast, Box, HStack, Heading, Button, VStack, Text, Input, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 import useAuth from "hooks/auth";
 import TextareaAutosize from "react-textarea-autosize";
 import { useParams } from "react-router-dom";
@@ -239,6 +227,10 @@ export function Info({ info }) {
       borderColor="gray.200"
     >
       <VStack spacing="4" alignItems="left">
+        <Text fontSize={25} fontWeight="bold" textDecoration="ActiveBorder">
+          About
+        </Text>
+
         <Text sx={labelStyle}>Full Name: {fname}</Text>
         <Text sx={labelStyle}>Date of Birth: {dob}</Text>
         <Text sx={labelStyle}>Gender: {gender}</Text>
@@ -246,6 +238,10 @@ export function Info({ info }) {
         <Text sx={labelStyle}>Course: {course}</Text>
         <Text sx={labelStyle}>Batch: {batch}</Text>
         <Text sx={labelStyle}>Roll Number: {roll}</Text>
+        <Text fontSize={25} fontWeight="bold">
+          Location
+        </Text>
+
         <Text sx={labelStyle}>Current Address: {caddress}</Text>
         <Text sx={labelStyle}>Permanent Address: {paddress}</Text>
       </VStack>

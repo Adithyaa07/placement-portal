@@ -84,7 +84,7 @@ export default function Profile() {
         <TabList>
           <Tab>Profile</Tab>
           <Tab>Posts</Tab>
-          <Tab>Blue</Tab>
+          {/* <Tab>Blue</Tab> */}
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -109,7 +109,7 @@ export default function Profile() {
           <TabPanel>
             {postsLoading ? <SkeletonText /> : <PostsList posts={posts} />}
           </TabPanel>
-          <TabPanel>Red, yellow and blue.</TabPanel>
+          {/* <TabPanel>Red, yellow and blue.</TabPanel> */}
         </TabPanels>
       </Tabs>
     </Stack>

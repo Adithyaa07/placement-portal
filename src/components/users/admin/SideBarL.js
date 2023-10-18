@@ -29,7 +29,7 @@ function SideBarL() {
       >
         <Box>
           <VStack spacing="4" align="initial">
-            <Flex mb="8" mt={-200}>
+            <Flex mb="8" mt={-150}>
               <Link
                 color="teal"
                 as={RouterLink}
@@ -58,6 +58,18 @@ function SideBarL() {
                 <Icon as={FaHdd} boxSize="6" mr="3" />
                 <Text mt="20px" m="5px">
                   Add Job Profiles
+                </Text>
+              </Flex>
+            </NavLink>
+            <NavLink
+              to="/protected/drives"
+              color="white"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Flex align="center">
+                <Icon as={FaHdd} boxSize="6" mr="3" />
+                <Text mt="20px" m="5px">
+                  Job Profiles
                 </Text>
               </Flex>
             </NavLink>

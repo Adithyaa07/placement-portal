@@ -8,7 +8,9 @@ import {
   Heading,
   Stack,
   Grid,
+  Button,
 } from "@chakra-ui/react";
+
 import { collection } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { db } from "firebase-auth";
@@ -19,7 +21,12 @@ function useDrives() {
 }
 
 function Drive({ drive }) {
-  const { title, eligible, role, packages, location, register, description } = drive;
+  const { title, eligible, role, packages, location, register, description } =
+    drive;
+
+  const handleApplyClick = () => {
+    window.location.href = register;
+  };
 
   return (
     <>
@@ -56,6 +63,7 @@ function Drive({ drive }) {
                 {description}
               </Text>
             </Box>
+            <Button onClick={handleApplyClick}>Apply Now..</Button>
           </Stack>
         </CardBody>
       </Card>
